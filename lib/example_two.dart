@@ -20,12 +20,12 @@ class _ExampleTwoState extends State<ExampleTwo> {
     var data = jsonDecode(response.body.toString());
 
     if (response.statusCode == 200) {
+      photos.clear();
       for (Map i in data) {
         PhotosModel photosModel =
             PhotosModel(title: i['title'], url: i['url'], id: i['id']);
         photos.add(photosModel);
       }
-
       return photos;
     } else {
       return photos;
