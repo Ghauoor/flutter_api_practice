@@ -5,8 +5,6 @@ import 'package:http/http.dart' as http;
 
 import '../models/users_models.dart';
 
-
-
 class ExampleThree extends StatefulWidget {
   const ExampleThree({super.key});
 
@@ -27,6 +25,7 @@ class _ExampleThreeState extends State<ExampleThree> {
       for (Map i in data) {
         usersList.add(UsersModel.fromJson(i));
       }
+      print(usersList);
       return usersList;
     } else {
       return usersList;
