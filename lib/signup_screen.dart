@@ -21,7 +21,9 @@ class _SignupScreenState extends State<SignupScreen> {
     try {
       Response response = await post(
           Uri.parse('https://reqres.in/api/register'),
+          //Sends all the data and when response gets back it put's in the body
           body: {'email': email, 'password': password});
+          
       if (response.statusCode == 200) {
         //get id and token of your credentails
         var data = jsonDecode(response.body.toString());
